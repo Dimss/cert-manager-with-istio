@@ -1,0 +1,27 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: cnvrg-gateway
+  labels:
+    app: ingressgateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 80
+        protocol: HTTP2
+        name: http
+      hosts:
+        - "*.devopslab.cnvrg.io"
+#    - port:
+#        number: 443
+#        protocol: HTTPS
+#        name: https-default
+#      tls:
+#      mode: SIMPLE
+#      serverCertificate: "sds"
+#      privateKey: "sds"
+#      credentialName: "cert"
+#      hosts:
+#        - "*"

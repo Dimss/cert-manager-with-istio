@@ -1,0 +1,1 @@
+istioctl manifest generate --set profile=default --set addonComponents.prometheus.enabled=false --set values.global.istioNamespace=cnvrg
